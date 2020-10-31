@@ -42,7 +42,7 @@
                     <!-- avtar user -->
                     <li class="nav-item">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img class="rounded-circle" src="https://via.placeholder.com/40x40?text=Avt">
+                            <img class="rounded-circle" src="https://via.placeholder.com/50x50?text=Avt" style="width:30px; height:30px">
                         </a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="#"><i class="fa fa-user"></i> Profile</a>
@@ -57,7 +57,7 @@
     <!--  -->
     <div class="container-fluid">
         <div class="row mt-3">
-            <div class="col-sm-3">
+            <div class="col-md-3">
                 <ul class="list-group">
                     <li class="list-group-item">
                         <a class="nav-link" href="#">
@@ -75,15 +75,15 @@
                         <p>Registered:</p>
                         <div class="overflow-auto" style="max-height: 100px;">
                             <div class="d-flex bd-highlight mb-2">
-                                <img class="rounded-circle" src="https://via.placeholder.com/40x40?text=Avt" alt="Teacher Image">
+                                <img class="rounded-circle" src="https://via.placeholder.com/40x40?text=Avt" alt="Teacher Image" style="width: 40px; height:40px">
                                 <a class="nav-link" href="#">IELTS Dan</a>
                             </div>
                             <div class="d-flex bd-highlight mb-2">
-                                <img class="rounded-circle" src="https://via.placeholder.com/40x40?text=Avt" alt="Teacher Image">
+                                <img class="rounded-circle" src="https://via.placeholder.com/40x40?text=Avt" alt="Teacher Image" style="width: 40px; height:40px">
                                 <a class="nav-link" href="#">Data Structure</a>
                             </div>
                             <div class="d-flex bd-highlight mb-2">
-                                <img class="rounded-circle" src="https://via.placeholder.com/40x40?text=Avt" alt="Teacher Image">
+                                <img class="rounded-circle" src="https://via.placeholder.com/40x40?text=Avt" alt="Teacher Image" style="width: 40px; height:40px">
                                 <a class="nav-link" href="#">C/C++</a>
                             </div>
                         </div>
@@ -102,7 +102,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="col-sm 9">
+            <div class="col-md-9">
                 <div class="tab-content" id="myTabContent">
                     <!-- Stream tab-->
                     <div class="tab-pane fade show active" id="stream" role="tabpanel" aria-labelledby="stream-tab">
@@ -164,7 +164,7 @@
                         <div class="h4 font-weight-normal text-primary">Teacher</div>
                         <hr>
                         <div class="d-flex bd-highlight mt-3">
-                            <img class="rounded-circle mr-3" src="https://via.placeholder.com/40x40?text=Avt" alt="Teacher Image">
+                            <img class="rounded-circle mr-3" src="https://via.placeholder.com/40x40?text=Avt" alt="Teacher Image" style="width:40px; height:40px">
                             <div class="align-self-center">Trần Thi Đan</div>
                         </div>
                         <br><br>
@@ -172,11 +172,11 @@
                         <span class="h4 font-weight-normal text-primary mr-2">Classmates</span><span class="align-self-center">(2 Students)</span>
                         <hr>
                         <div class="d-flex bd-highlight mt-2">
-                            <img class="rounded-circle mr-3" src="https://via.placeholder.com/40x40?text=Avt" alt="Teacher Image">
+                            <img class="rounded-circle mr-3" src="https://via.placeholder.com/40x40?text=Avt" alt="Teacher Image" style="width:40px; height:40px">
                             <div class="align-self-center">Tạ Trung Hiếu</div>
                         </div>
                         <div class="d-flex bd-highlight mt-3">
-                            <img class="rounded-circle mr-3" src="https://via.placeholder.com/40x40?text=Avt" alt="Teacher Image">
+                            <img class="rounded-circle mr-3" src="https://via.placeholder.com/40x40?text=Avt" alt="Teacher Image" style="width:40px; height:40px">
                             <div class="align-self-center">Phạm Hà Giang</div>
                         </div>
                     </div>

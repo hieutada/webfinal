@@ -18,8 +18,8 @@
         <div class="container-fluid">
             <!-- Logo link -->
             <div class="navbar-header">
-                <!-- Tên lớp học -->
-                <a class="navbar-brand" href="#">TDTU Classroom</a>
+                <!-- Tên mục -->
+                <a class="navbar-brand" href="#">To-do</a>
             </div>
 
             <!-- Nut menu khi thay doi ti le man hinh -->
@@ -43,7 +43,7 @@
                     <!-- avtar user -->
                     <li class="nav-item">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img class="rounded-circle" src="https://via.placeholder.com/40x40?text=Avt">
+                            <img class="rounded-circle" src="https://via.placeholder.com/40x40?text=Avt" style="width:30px; height:30px">
                         </a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="#"><i class="fa fa-user"></i> Profile</a>

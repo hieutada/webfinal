@@ -21,52 +21,56 @@ if (!isset($_SESSION['take_username'])) {
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <!-- Logo link -->
-        <a class="navbar-brand" href="#">TDTU Classroom</a>
+        <div class="container-fluid">
 
+            <!-- Logo link -->
+            <div class="navbar-header">
+                <!-- Tên lớp học -->
+                <a class="navbar-brand" href="#">TDTU Classroom</a>
+            </div>
 
+            <!-- Nut menu khi thay doi ti le man hinh -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-        <!-- Nut menu khi thay doi ti le man hinh -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <!-- nút To-do -->
-                    <a class="nav-link" href="#">
-                        <i class="fa fa-tasks" aria-hidden="true"></i>
-                        To-do
-                    </a>
-                </li>
-                <li>
-                    <!-- To review -->
-                    <a class="nav-link" href="#">
-                        <i class="fa fa-book" aria-hidden="true"></i>
-                        To review
-                        <span class="badge badge-pill badge-primary">3</span>
-                    </a>
-                </li>
-            </ul>
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a type="button" class="nav-link" data-toggle="modal" data-target="#addBtnModal" href="#">
-                        <i class="fa fa-plus"></i>
-                        Add
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <img src="https://via.placeholder.com/40x40?text=Avt" width="30" height="30" class="rounded-circle border">
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#"><i class="fa fa-user"></i> Profile</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#"><i class="fa fa-sign-out"></i> Logout</a>
-                    </div>
-                </li>
-            </ul>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <!-- nút To-do -->
+                        <a class="nav-link" href="#">
+                            <i class="fa fa-tasks" aria-hidden="true"></i>
+                            To-do
+                        </a>
+                    </li>
+                    <li>
+                        <!-- To review -->
+                        <a class="nav-link" href="#">
+                            <i class="fa fa-book" aria-hidden="true"></i>
+                            To review
+                            <span class="badge badge-pill badge-primary">3</span>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a type="button" class="nav-link" data-toggle="modal" data-target="#addBtnModal" href="#">
+                            <i class="fa fa-plus"></i>
+                            Add
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img src="https://via.placeholder.com/40x40?text=Avt" width="30" height="30" class="rounded-circle border">
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#"><i class="fa fa-user"></i> Profile</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#"><i class="fa fa-sign-out"></i> Logout</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
 
@@ -136,14 +140,19 @@ if (!isset($_SESSION['take_username'])) {
         <!-- card lớp học -->
         <div class="card-columns">
             <div class="card" style="width:300px">
-                <img src="https://picsum.photos/640/360" class="card-img" alt="image" style="width:100%; height:100px">
-                <div class="card-img-overlay">
-                    <h5 class="card-title">Web Demo - CLC</h5>
+                <img src="./img/Backtoschool.jpg" class="card-img" alt="image" style="width:100%; height:100px">
+                <div class="row card-img-overlay text-white">
+                    <div class="col-10">
+                        <h5 class="card-title">My Classroom</h5>
+                        <p class="card-title">Description</p>
+                    </div>
+                    <div class="col-2">
+                        <button class="btn" type="submit" style="color: white;"><i class="fa fa-ellipsis-v fa-lg"></i></button>
+                    </div>
                 </div>
                 <div class="card-body">
-                    <p class="card-text">Group 207 - Shift 3 - Room: E407</p>
                     <a href="#" class="btn btn-primary stretched-link">See Classroom</a>
-                    <button class="btn" type="submit"><i class="fa fa-ellipsis-v"></i></button>
+
                 </div>
             </div>
         </div>
