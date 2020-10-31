@@ -1,124 +1,140 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
-
 <!DOCTYPE html>
-<html>
-
-<link href="https://blackrockdigital.github.io/startbootstrap-scrolling-nav/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<html lang="en">
 
 <head>
-  <style>
-    .sidenav {
-      height: 100%;
-      width: 0;
-      position: fixed;
-      z-index: 1;
-      top: 0;
-      right: 0;
-      background-color: #111;
-      overflow-x: hidden;
-      transition: 0.5s;
-      padding-top: 60px;
-    }
-
-    .sidenav a {
-      padding: 8px 8px 8px 32px;
-      text-decoration: none;
-      font-size: 25px;
-      color: #818181;
-      display: block;
-      transition: 0.3s;
-    }
-
-    .sidenav a:hover {
-      color: #f1f1f1;
-    }
-
-    .sidenav .closebtn {
-      position: absolute;
-      top: 0;
-      right: 25px;
-      font-size: 36px;
-      margin-left: 50px;
-    }
-
-    @media (min-width: 992px) {
-
-      .sidenav .navbar-nav {
-        -ms-flex-direction: row;
-        flex-direction: column;
-        width: 100%;
-        margin-left: 65px;
-        font-size: 16px;
-        font-weight: 600;
-        text-transform: uppercase;
-      }
-    }
-
-    @media screen and (max-height: 450px) {
-      .sidenav {
-        padding-top: 15px;
-      }
-
-      .sidenav a {
-        font-size: 18px;
-      }
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Classes</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <!-- Logo link -->
+      <div class="navbar-header">
+        <!-- Tên lớp học -->
+        <a class="navbar-brand" href="#">IELTS Dan</a>
+      </div>
 
-
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-    <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top">Start Bootstrap</a>
-      <button class="navbar-toggler collapsed" id="main" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon" onclick="openNav()"></span>
+      <!-- Nut menu khi thay doi ti le man hinh -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+        <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="navbar-collapse collapse">
-        <ul class="navbar-nav ml-auto">
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="nav nav-tabs mx-auto justify-content-center" id="myTab" role="tablist">
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#services">Services</a>
+            <a class="nav-link active" id="stream-tab" data-toggle="tab" href="#stream" role="tab" aria-controls="stream" aria-selected="true">Stream</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#services">Services</a>
+            <a class="nav-link" id="classwork-tab" data-toggle="tab" href="#classwork" role="tab" aria-controls="classwork" aria-selected="false">Classwork</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+            <a class="nav-link" id="people-tab" data-toggle="tab" href="#people" role="tab" aria-controls="people" aria-selected="false">People</a>
           </li>
         </ul>
-      </div>
-      <div class="navbar-collapse sidenav" id="mySidenav">
         <ul class="navbar-nav ml-auto">
+          <!-- avtar user -->
           <li class="nav-item">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#services">Services</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <img class="rounded-circle" src="https://via.placeholder.com/40x40?text=Avt">
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#"><i class="fa fa-user"></i> Profile</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#"><i class="fa fa-sign-out"></i> Logout</a>
+            </div>
           </li>
         </ul>
       </div>
     </div>
   </nav>
+  <!--  -->
+  <div class="tab-content container" id="myTabContent">
 
-  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-  <script>
-    function openNav() {
-      document.getElementById("mySidenav").style.width = "250px";
-    }
+    <!-- Stream tab-->
+    <div class="tab-pane fade show active mt-3" id="stream" role="tabpanel" aria-labelledby="stream-tab">
 
-    function closeNav() {
-      document.getElementById("mySidenav").style.width = "0";
-    }
-  </script>
+      <!-- Up status/document -->
+      <form class="border rounded mb-3" action="" method="post">
+        <!-- text input -->
+        <div class="form-group px-2 pt-3">
+          <label for="exampleFormControlTextarea1">Share with your class</label>
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+        <div class="form-group row px-2">
+          <!-- up file -->
+          <div class="col-sm pb-2">
+            <div class="custom-file">
+              <input type="file" class="custom-file-input" id="customFile">
+              <label class="custom-file-label" for="customFile"></label>
+            </div>
+            <script>
+              $(".custom-file-input").on("change", function() {
+                var fileName = $(this).val().split("\\").pop();
+                $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+              });
+            </script>
+          </div>
+          <!-- submit document -->
+          <div class="col-sm pb-2">
+            <button type="submit" class="btn btn-primary ">Post</button>
+          </div>
+        </div>
+      </form>
+
+      <!-- document link card -->
+      <div class="card mb-3">
+        <div class="card-body d-flex">
+          <div class="align-self-center mr-3">
+            <i class="fa fa-bookmark-o fa-2x" aria-hidden="true"></i>
+          </div>
+          <div style="flex: 1;">
+            <a href="#" class="font-weight-bold text-dark stretched-link">Keynote 3</a>
+            <!-- <div class="font-weight-normal">Date post: 20/10/2020</div> -->
+            <div>
+              <small>Date post: 20/10/2020</small>
+            </div>
+          </div>
+          <button class="btn"><i class="fa fa-ellipsis-v fa-lg" aria-hidden="true"></i></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Classwork tab -->
+    <div class="tab-pane fade" id="classwork" role="tabpanel" aria-labelledby="classwork-tab">
+
+    </div>
+
+    <!-- People tab -->
+    <div class="tab-pane fade mt-3" id="people" role="tabpanel" aria-labelledby="people-tab">
+      <!-- teacher -->
+      <div class="h4 font-weight-normal text-primary">Teacher</div>
+      <hr>
+      <div class="d-flex bd-highlight mt-3">
+        <img class="rounded-circle mr-3" src="https://via.placeholder.com/40x40?text=Avt" alt="Teacher Image">
+        <div class="align-self-center">Trần Thi Đan</div>
+      </div>
+      <br><br>
+      <!-- classmate -->
+      <span class="h4 font-weight-normal text-primary mr-2">Classmates</span><span class="align-self-center">(2 Students)</span>
+      <hr>
+      <div class="d-flex bd-highlight mt-2">
+        <img class="rounded-circle mr-3" src="https://via.placeholder.com/40x40?text=Avt" alt="Teacher Image">
+        <div class="align-self-center">Tạ Trung Hiếu</div>
+      </div>
+      <div class="d-flex bd-highlight mt-3">
+        <img class="rounded-circle mr-3" src="https://via.placeholder.com/40x40?text=Avt" alt="Teacher Image">
+        <div class="align-self-center">Phạm Hà Giang</div>
+      </div>
+    </div>
+  </div>
+
 </body>
 
 </html>
