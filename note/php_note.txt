@@ -1,0 +1,2 @@
+create random classroom code:
+$code = substr(md5(uniqid(mt_rand(), true)) , 0, 7);

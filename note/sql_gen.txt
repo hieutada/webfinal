@@ -1,0 +1,77 @@
+CREATE TABLE `classroom`.`users`(
+    `id_user` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    `username` VARCHAR(255) NOT NULL,
+    `password` VARCHAR(255) NOT NULL,
+    `name` VARCHAR(255) NOT NULL,
+    `birth` DATE NOT NULL,
+    `email` VARCHAR(255) NOT NULL,
+    `phone` VARCHAR(255),
+    PRIMARY KEY(`id_user`),
+    UNIQUE(`username`, `email`)
+) ENGINE = INNODB;
+
+CREATE TABLE `classroom`.`students`(
+    `id_student` INT UNSIGNED NOT NULL,
+    PRIMARY KEY(`id_student`),
+    FOREIGN KEY(`id_student`) REFERENCES `users`(`id_user`)
+) ENGINE = INNODB;
+
+CREATE TABLE `classroom`.`teachers`(
+    `id_teacher` INT UNSIGNED NOT NULL,
+    PRIMARY KEY(`id_teacher`),
+    FOREIGN KEY(`id_teacher`) REFERENCES `users`(`id_user`)
+) ENGINE = INNODB;
+
+CREATE TABLE `classroom`.`classes`(
+    `id_class` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    `code` VARCHAR(255),
+    `id_teacher` INT UNSIGNED  NOT NULL,
+    `classname` VARCHAR(255) NOT NULL,
+    `description` VARCHAR(255),
+    `avatar` VARCHAR(255),
+    PRIMARY KEY(`id_class`),
+    FOREIGN KEY(`id_teacher`) REFERENCES `teachers`(`id_teacher`),
+    UNIQUE(`code`)
+) ENGINE = INNODB;
+
+CREATE TABLE `classroom`.`joinclass`(
+    `id_student` INT UNSIGNED NOT NULL,
+    `id_class` INT UNSIGNED NOT NULL,
+    PRIMARY KEY(`id_student`, `id_class`),
+    FOREIGN KEY(`id_student`) REFERENCES `students`(`id_student`),
+    FOREIGN KEY(`id_class`) REFERENCES `classes`(`id_class`)
+) ENGINE = INNODB;
+
+CREATE TABLE `classroom`.`exercises`(
+    `id_exercise` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    `id_class` INT UNSIGNED NOT NULL,
+    `content` VARCHAR(255) NOT NULL,
+    `file_upload` VARCHAR(255),
+    PRIMARY KEY(`id_exercise`),
+    FOREIGN KEY(`id_class`) REFERENCES `classes`(`id_class`)
+) ENGINE = INNODB;
+
+CREATE TABLE `classroom`.`takeexercise`(
+    `id_student` INT UNSIGNED NOT NULL,
+    `id_exercise` INT UNSIGNED NOT NULL,
+    `score` INT UNSIGNED,
+    PRIMARY KEY(`id_student`, `id_exercise`),
+    FOREIGN KEY(`id_student`) REFERENCES `students`(`id_student`),
+    FOREIGN KEY(`id_exercise`) REFERENCES `exercises`(`id_exercise`)
+) ENGINE = INNODB;
+
+CREATE TABLE `classroom`.`lectures`(
+    `id_lecture` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    `id_class` INT UNSIGNED NOT NULL,
+    `file_upload` VARCHAR(255) NOT NULL,
+    PRIMARY KEY(`id_lecture`),
+    FOREIGN KEY(`id_class`) REFERENCES `classes`(`id_class`)
+) ENGINE = INNODB;
+
+CREATE TABLE `classroom`.`notification`(
+    `id_notification` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    `id_class` INT UNSIGNED NOT NULL,
+    `content`  VARCHAR(255) NOT NULL,
+    PRIMARY KEY(`id_notification`),
+    FOREIGN KEY(`id_class`) REFERENCES `classes`(`id_class`)
+) ENGINE = INNODB;

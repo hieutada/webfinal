@@ -16,7 +16,7 @@
 
 <body>
     <div class="container p-3 my-3 border">
-        <img class="rounded mx-auto d-block pb-3" src="https://via.placeholder.com/300x300?text=Logo" alt="logo image" width="20%">
+        <img class="rounded mx-auto d-block pb-3" src="./img/logo.png" alt="logo image" width="20%">
 
         <!-- thanh tiêu đề tab -->
         <ul class="nav nav-tabs justify-content-center" role="tablist">

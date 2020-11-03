@@ -13,50 +13,46 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <!-- 1. thanh navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container-fluid">
-            <!-- Logo link -->
+            <!-- 1.1. Tên lớp học -->
             <div class="navbar-header">
-                <!-- Tên lớp học -->
                 <a class="navbar-brand" href="#">IELTS Dan</a>
             </div>
 
-            <!-- Nut menu khi thay doi ti le man hinh -->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+            <!-- 1.2. Tab control -->
+            <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="stream-tab" data-toggle="tab" href="#stream" role="tab" aria-controls="stream" aria-selected="true">Stream</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="classwork-tab" data-toggle="tab" href="#classwork" role="tab" aria-controls="classwork" aria-selected="false">Classwork</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="people-tab" data-toggle="tab" href="#people" role="tab" aria-controls="people" aria-selected="false">People</a>
+                </li>
+            </ul>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
-                    <li class="nav-item">
-                        <a class="nav-link active" id="stream-tab" data-toggle="tab" href="#stream" role="tab" aria-controls="stream" aria-selected="true">Stream</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="classwork-tab" data-toggle="tab" href="#classwork" role="tab" aria-controls="classwork" aria-selected="false">Classwork</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="people-tab" data-toggle="tab" href="#people" role="tab" aria-controls="people" aria-selected="false">People</a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav ml-auto">
-                    <!-- avtar user -->
-                    <li class="nav-item">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img class="rounded-circle" src="https://via.placeholder.com/50x50?text=Avt" style="width:30px; height:30px">
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#"><i class="fa fa-user"></i> Profile</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#"><i class="fa fa-sign-out"></i> Logout</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
+            <!-- 1.3 Account item -->
+            <span class="nav-item">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img class="rounded-circle" src="https://via.placeholder.com/30x30?text=Avt" style="width:30px; height:30px">
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#"><i class="fa fa-user"></i> Profile</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#"><i class="fa fa-sign-out"></i> Logout</a>
+                </div>
+            </span>
         </div>
     </nav>
-    <!--  -->
-    <div class="container-fluid">
+
+    <!-- 2. Phần chứa nội dung chính -->
+    <div class="container-fluid" style="margin-top: 80px;">
         <div class="row mt-3">
+
+            <!-- 2.1. Thanh bên trái -->
             <div class="col-md-3">
                 <ul class="list-group">
                     <li class="list-group-item">
@@ -102,40 +98,42 @@
                     </li>
                 </ul>
             </div>
-            <div class="col-md-9">
-                <div class="tab-content" id="myTabContent">
-                    <!-- Stream tab-->
-                    <div class="tab-pane fade show active" id="stream" role="tabpanel" aria-labelledby="stream-tab">
+            
+            <!-- 2.2. Phần chứa nội dung tab bên phải -->
+            <div class="col-md-9 tab-content" id="myTabContent">
+                <!-- 2.2.1. Stream tab-->
+                <div class="tab-pane fade show active" id="stream" role="tabpanel" aria-labelledby="stream-tab">
 
-                        <!-- Up status/document -->
-                        <form class="border rounded mb-3" action="" method="post">
-                            <!-- text input -->
-                            <div class="form-group px-2 pt-3">
-                                <label for="exampleFormControlTextarea1">Share with your class</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                            </div>
-                            <div class="form-group row pl-2">
-                                <!-- up file -->
-                                <div class="col-sm pb-2">
-                                    <div class="custom-file">
-                                        <input type="file" class="custom-file-input" id="customFile">
-                                        <label class="custom-file-label" for="customFile"></label>
-                                    </div>
-                                    <script>
-                                        $(".custom-file-input").on("change", function() {
-                                            var fileName = $(this).val().split("\\").pop();
-                                            $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
-                                        });
-                                    </script>
+                    <!-- Up status/document -->
+                    <form class="border rounded mb-3" action="" method="post">
+                        <!-- Text input -->
+                        <div class="form-group px-2 pt-3">
+                            <label for="exampleFormControlTextarea1">Share with your class</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
+                        <div class="form-group row pl-2">
+                            <!-- Up file -->
+                            <div class="col-sm pb-2">
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="customFile">
+                                    <label class="custom-file-label" for="customFile"></label>
                                 </div>
-                                <!-- submit document -->
-                                <div class="col-sm pb-2">
-                                    <button type="submit" class="btn btn-primary ">Post</button>
-                                </div>
+                                <script>
+                                    $(".custom-file-input").on("change", function() {
+                                        var fileName = $(this).val().split("\\").pop();
+                                        $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+                                    });
+                                </script>
                             </div>
-                        </form>
+                            <!-- Submit document -->
+                            <div class="col-sm pb-2">
+                                <button type="submit" class="btn btn-primary ">Post</button>
+                            </div>
+                        </div>
+                    </form>
 
-                        <!-- document link card -->
+                    <!-- Document link card (Example: 10 time loop)-->
+                    <?php for ($x = 0; $x <= 10; $x++) { ?>
                         <div class="card mb-3">
                             <div class="card-body d-flex">
                                 <div class="align-self-center mr-3">
@@ -143,42 +141,39 @@
                                 </div>
                                 <div style="flex: 1;">
                                     <a href="#" class="font-weight-bold text-dark stretched-link">Keynote 3</a>
-                                    <!-- <div class="font-weight-normal">Date post: 20/10/2020</div> -->
-                                    <div>
-                                        <small>Date post: 20/10/2020</small>
-                                    </div>
+                                    <div><small>Date post: 20/10/2020</small></div>
                                 </div>
                                 <button class="btn"><i class="fa fa-ellipsis-v fa-lg" aria-hidden="true"></i></button>
                             </div>
                         </div>
+                    <?php } ?>
+                </div>
+
+                <!-- 2.2.2. Classwork tab -->
+                <div class="tab-pane fade" id="classwork" role="tabpanel" aria-labelledby="classwork-tab">
+
+                </div>
+
+                <!--2.2.3. People tab -->
+                <div class="tab-pane fade mt-3" id="people" role="tabpanel" aria-labelledby="people-tab">
+                    <!-- teacher -->
+                    <div class="h4 font-weight-normal text-primary">Teacher</div>
+                    <hr>
+                    <div class="d-flex bd-highlight mt-3">
+                        <img class="rounded-circle mr-3" src="https://via.placeholder.com/40x40?text=Avt" alt="Teacher Image" style="width:40px; height:40px">
+                        <div class="align-self-center">Trần Thi Đan</div>
                     </div>
-
-                    <!-- Classwork tab -->
-                    <div class="tab-pane fade" id="classwork" role="tabpanel" aria-labelledby="classwork-tab">
-
+                    <br><br>
+                    <!-- classmate -->
+                    <span class="h4 font-weight-normal text-primary mr-2">Classmates</span><span class="align-self-center">(2 Students)</span>
+                    <hr>
+                    <div class="d-flex bd-highlight mt-2">
+                        <img class="rounded-circle mr-3" src="https://via.placeholder.com/40x40?text=Avt" alt="Teacher Image" style="width:40px; height:40px">
+                        <div class="align-self-center">Tạ Trung Hiếu</div>
                     </div>
-
-                    <!-- People tab -->
-                    <div class="tab-pane fade mt-3" id="people" role="tabpanel" aria-labelledby="people-tab">
-                        <!-- teacher -->
-                        <div class="h4 font-weight-normal text-primary">Teacher</div>
-                        <hr>
-                        <div class="d-flex bd-highlight mt-3">
-                            <img class="rounded-circle mr-3" src="https://via.placeholder.com/40x40?text=Avt" alt="Teacher Image" style="width:40px; height:40px">
-                            <div class="align-self-center">Trần Thi Đan</div>
-                        </div>
-                        <br><br>
-                        <!-- classmate -->
-                        <span class="h4 font-weight-normal text-primary mr-2">Classmates</span><span class="align-self-center">(2 Students)</span>
-                        <hr>
-                        <div class="d-flex bd-highlight mt-2">
-                            <img class="rounded-circle mr-3" src="https://via.placeholder.com/40x40?text=Avt" alt="Teacher Image" style="width:40px; height:40px">
-                            <div class="align-self-center">Tạ Trung Hiếu</div>
-                        </div>
-                        <div class="d-flex bd-highlight mt-3">
-                            <img class="rounded-circle mr-3" src="https://via.placeholder.com/40x40?text=Avt" alt="Teacher Image" style="width:40px; height:40px">
-                            <div class="align-self-center">Phạm Hà Giang</div>
-                        </div>
+                    <div class="d-flex bd-highlight mt-3">
+                        <img class="rounded-circle mr-3" src="https://via.placeholder.com/40x40?text=Avt" alt="Teacher Image" style="width:40px; height:40px">
+                        <div class="align-self-center">Phạm Hà Giang</div>
                     </div>
                 </div>
             </div>
