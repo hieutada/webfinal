@@ -20,16 +20,13 @@
         <div class="bg-light border-right" id="sidebar-wrapper" style="margin-top: 60px;">
             <div class="list-group list-group-flush">
                 <a href="home.php" class="list-group-item list-group-item-action bg-light">
-                    <i class="fa fa-home" aria-hidden="true"></i>
-                    Classroom
+                    <i class="fa fa-home" aria-hidden="true"></i> Classroom
+                </a>
+                <a href="todo.php" class="list-group-item list-group-item-action bg-light">
+                    <i class="fa fa-tasks" aria-hidden="true"></i> To-do
                 </a>
                 <a href="#" class="list-group-item list-group-item-action bg-light">
-                    <i class="fa fa-tasks" aria-hidden="true"></i>
-                    To-do
-                </a>
-                <a href="#" class="list-group-item list-group-item-action bg-light">
-                    <i class="fa fa-archive" aria-hidden="true"></i>
-                    Storage
+                    <i class="fa fa-archive" aria-hidden="true"></i> Storage
                 </a>
                 <div class="list-group-item list-group-item-action bg-light">
                     <p>Registered:</p>
@@ -81,20 +78,20 @@
 
                     <!-- 2.1.3 Account item -->
                     <span class="nav-item dropdown">
-                        <a class="nav-link dropdown" href="#" id="dropdownMenuButton" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img class="rounded-circle" src="https://via.placeholder.com/40x40?text=Avt" style="width:30px; height:30px">
+                        <a class="nav-link dropdown p-0" href="#" id="dropdownMenuButton" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img class="rounded-circle" src="https://via.placeholder.com/40x40?text=Avt" style="width:35px; height:35px">
                         </a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#"><i class="fa fa-user"></i> Profile</a>
+                            <a class="dropdown-item" href="profile.php"><i class="fa fa-user"></i> Profile</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#"><i class="fa fa-sign-out"></i> Logout</a>
+                            <a class="dropdown-item" href="logout.php"><i class="fa fa-sign-out"></i> Logout</a>
                         </div>
                     </span>
                 </div>
             </nav>
 
             <!-- 2.2 Tab content -->
-            <div class="container-fluid tab-content" id="myTabContent" style="margin-top: 80px;">
+            <div class="container-md tab-content" id="myTabContent" style="margin-top: 80px;">
                 <!-- 2.2.0 Lựa chọn lớp học -->
                 <form action="" method="post">
                     <div class="form-group" style="width: 200px;">
