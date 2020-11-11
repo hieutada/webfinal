@@ -127,19 +127,20 @@ if (!isset($_SESSION['take_id_user'])) {
                         </div>
                     <?php
                     }
+                    // Load các lớp học đẫ ĐK của người khác
                     $sql2 = "SELECT `classes`.* FROM `joinclass`, `classes` WHERE `joinclass`.`id_student` = '$id_user' AND `joinclass`.`id_class`=`classes`.`id_class`";
                     $result2 = mysqli_query($conn, $sql2);
                     while ($row = mysqli_fetch_assoc($result2)) {
                     ?>
                         <div class="card" style="width:300px">
-                            <img class="card-img-top" src="./img/Backtoschool.jpg" alt="image" style="width: 100%; height:100px; object-fit:cover;">
+                            <img class="card-img-top" src="./img/Backtoschool.jpg" alt="image" style="width: 100%; height:150px; object-fit:cover;">
                             <div class="card-img-overlay text-white">
                                 <h5 class="card-title"><?php echo $row["classname"] ?></h5>
                                 <p class="card-text"><?php echo $row["description"] ?></p>
-                            </div>
-                            <div class="card-body">
-                                <a href="#" class="btn btn-primary stretched-link">See Classroom</a>
-                                <button class="btn btn-primary stretched-link" type="submit"><i class="fa fa-ellipsis-v fa-lg"></i></button>
+                                <div class="link d-flex">
+                                    <a class="btn btn-primary mr-3" href="classes.php">See Classroom</a>
+                                    <a class="btn btn-primary" href="#"><i class="fa fa-ellipsis-v fa-lg"></i></a>
+                                </div>
                             </div>
                         </div>
                     <?php
