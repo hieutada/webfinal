@@ -16,52 +16,24 @@ if (!isset($_SESSION['take_id_user'])) {
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>IELT Dan</title>
+    <title>Classes</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="css/simple-sidebar.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
 
 </head>
 
 <body>
     <div class="d-flex" id="wrapper">
         <!-- 1. Sidebar -->
-        <div class="bg-light border-right" id="sidebar-wrapper" style="margin-top: 60px;">
-            <div class="list-group list-group-flush">
-                <a href="index.php" class="list-group-item list-group-item-action bg-light">
-                    <i class="fa fa-home" aria-hidden="true"></i>Classroom
-                </a>
-                <a href="#" class="list-group-item list-group-item-action bg-light">
-                    <i class="fa fa-tasks" aria-hidden="true"></i>To-do
-                </a>
-                <div class="list-group-item list-group-item-action bg-light">
-                    <p><i class="fa fa-tags" aria-hidden="true"></i> Registered:</p>
-                    <?php
-                    $sql1 = "SELECT * FROM `classes` WHERE id_teacher = '$id_user'";
-                    $result1 = mysqli_query($conn, $sql1);
-                    while ($row = mysqli_fetch_assoc($result1)) {
-                    ?>
-                        <div class="overflow-auto">
-                            <div class="d-flex bd-highlight mb-2">
-                                <img class="rounded-circle" src="https://via.placeholder.com/40x40?text=Avt" alt="Teacher Image" style="width: 40px; height:40px">
-                                <a class="nav-link" href="#"><?php echo $row["classname"] ?></a>
-                            </div>
-                        </div>
-                    <?php
-                    }
-                    ?>
-                </div>
-                <a href="#" class="list-group-item list-group-item-action bg-light">
-                    <i class="fa fa-archive" aria-hidden="true"></i>Storage
-                </a>
-                <a href="#" class="list-group-item list-group-item-action bg-light">
-                    <i class="fa fa-cog" aria-hidden="true"></i>Setting
-                </a>
-            </div>
+        <div class="bg-light border-right" id="sidebar-wrapper">
+            <?php
+            require "load_sidebar.php"
+            ?>
         </div>
 
         <!-- 2. Content -->
@@ -91,7 +63,7 @@ if (!isset($_SESSION['take_id_user'])) {
                     <!-- 2.1.3 Account item -->
                     <div class="nav-item dropdown">
                         <a class="btn dropdown p-0" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img class="rounded-circle" src="https://via.placeholder.com/30x30?text=Avt" style="width:35px; height:35px">
+                            <img class="rounded-circle" src="https://via.placeholder.com/30x30?text=Avt" width="35px" height="35">
                         </a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
                             <a class="dropdown-item" href="profile.php"><i class="fa fa-user"></i> Profile</a>
@@ -103,10 +75,10 @@ if (!isset($_SESSION['take_id_user'])) {
             </nav>
 
             <!-- 2.2 Tab content -->
-            <div class="container-md tab-content" id="myTabContent" style="margin-top: 75px;">
+            <div class="container tab-content">
                 <!-- 2.2.0 Ảnh bìa -->
-                <div class="card" style="width:100%">
-                    <img class="img-fluid rounded" src="./img/Backtoschool.jpg" class="card-img" alt="image" style="object-fit:cover;">
+                <div class="card">
+                    <img class="img-fluid rounded" src="./img/Backtoschool.jpg" class="card-img" alt="image">
                     <div class="card-img-overlay text-white">
                         <h5 class="card-title">My Classroom</h5>
                         <div class="card-text">Description</div>
@@ -141,14 +113,14 @@ if (!isset($_SESSION['take_id_user'])) {
                     <?php for ($x = 0; $x <= 10; $x++) { ?>
                         <div class="card mb-3">
                             <div class="card-body d-flex">
-                                <div class="align-self-center mr-3">
+                                <span class="align-self-center mr-3">
                                     <i class="fa fa-bookmark-o fa-2x" aria-hidden="true"></i>
-                                </div>
-                                <div style="flex: 1;">
+                                </span>
+                                <span>
                                     <a href="#" class="font-weight-bold text-dark stretched-link">Keynote 3</a>
                                     <div><small>Date post: 20/10/2020</small></div>
-                                </div>
-                                <button class="btn"><i class="fa fa-ellipsis-v fa-lg" aria-hidden="true"></i></button>
+                                </span>
+                                <button class="btn ml-auto"><i class="fa fa-ellipsis-v fa-lg" aria-hidden="true"></i></button>
                             </div>
                         </div>
                     <?php } ?>
@@ -156,7 +128,7 @@ if (!isset($_SESSION['take_id_user'])) {
 
                 <!-- 2.2.2. Classwork tab -->
                 <div class="tab-pane fade pt-3" id="classwork" role="tabpanel" aria-labelledby="classwork-tab">
-
+                    
                 </div>
 
                 <!--2.2.3. People tab -->
@@ -165,7 +137,7 @@ if (!isset($_SESSION['take_id_user'])) {
                     <div class="h4 font-weight-normal text-primary">Teacher</div>
                     <hr>
                     <div class="d-flex bd-highlight mt-3">
-                        <img class="rounded-circle mr-3" src="https://via.placeholder.com/40x40?text=Avt" alt="Teacher Image" style="width:40px; height:40px">
+                        <img class="rounded-circle mr-3" src="https://via.placeholder.com/40x40?text=Avt" alt="Teacher Image">
                         <div class="align-self-center">Trần Thi Đan</div>
                     </div>
                     <br><br>
@@ -173,11 +145,11 @@ if (!isset($_SESSION['take_id_user'])) {
                     <span class="h4 font-weight-normal text-primary mr-2">Classmates</span><span class="align-self-center">(2 Students)</span>
                     <hr>
                     <div class="d-flex bd-highlight mt-2">
-                        <img class="rounded-circle mr-3" src="https://via.placeholder.com/40x40?text=Avt" alt="Teacher Image" style="width:40px; height:40px">
+                        <img class="rounded-circle mr-3" src="https://via.placeholder.com/40x40?text=Avt" alt="Teacher Image">
                         <div class="align-self-center">Tạ Trung Hiếu</div>
                     </div>
                     <div class="d-flex bd-highlight mt-3">
-                        <img class="rounded-circle mr-3" src="https://via.placeholder.com/40x40?text=Avt" alt="Teacher Image" style="width:40px; height:40px">
+                        <img class="rounded-circle mr-3" src="https://via.placeholder.com/40x40?text=Avt" alt="Teacher Image">
                         <div class="align-self-center">Phạm Hà Giang</div>
                     </div>
                 </div>
@@ -185,20 +157,8 @@ if (!isset($_SESSION['take_id_user'])) {
         </div>
     </div>
 
-    <!-- Menu Toggle Script -->
-    <script>
-        $("#menu-toggle").click(function(e) {
-            e.preventDefault();
-            $("#wrapper").toggleClass("toggled");
-        });
-    </script>
-    <!-- Xử lý upfile -->
-    <script>
-        $(".custom-file-input").on("change", function() {
-            var fileName = $(this).val().split("\\").pop();
-            $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
-        });
-    </script>
+    <!-- JS -->
+    <script src="main.js"></script>
 </body>
 
 </html>
